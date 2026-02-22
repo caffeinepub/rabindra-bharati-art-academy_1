@@ -1,0 +1,326 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-artistic-childhood-friendly-homepage-with-information-about-the-academy-location-contact-info-and-mobile-friendly-design",
+      "featureTitle": "Create artistic, childhood-friendly homepage with information about the academy, location & contact info, and mobile-friendly design",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/layout/Footer.tsx",
+        "frontend/src/components/layout/Header.tsx",
+        "frontend/src/components/layout/Layout.tsx",
+        "frontend/src/pages/HomePage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-public-admission-page-with-information-about-the-admission-process-and-exam-system",
+      "featureTitle": "Create public admission page with information about the admission process and exam system",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/AdmissionInfoPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-public-gallery-page-displaying-best-student-artwork",
+      "featureTitle": "Create public gallery page displaying best student artwork",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/gallery/ArtworkCard.tsx",
+        "frontend/src/hooks/usePublicGallery.ts",
+        "frontend/src/pages/PublicGalleryPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-floating-whatsapp-chat-button-for-visitor-communication",
+      "featureTitle": "Add floating WhatsApp chat button for visitor communication",
+      "files": [
+        "frontend/src/components/common/WhatsAppButton.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-online-admission-form-collecting-student-details-guardian-details-and-artwork-sample-upload-with-teacher-approval-workflow",
+      "featureTitle": "Build online admission form collecting student details, guardian details, and artwork sample upload with teacher approval workflow",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/forms/ArtworkUpload.tsx",
+        "frontend/src/hooks/useSubmitAdmission.ts",
+        "frontend/src/pages/AdmissionFormPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-secure-login-system-with-separate-student-and-teacher-login-role-based-access-control-and-no-public-signup",
+      "featureTitle": "Create secure login system with separate student and teacher login, role-based access control, and no public signup",
+      "files": [
+        "frontend/src/components/auth/AccessDeniedScreen.tsx",
+        "frontend/src/components/auth/LoginButton.tsx",
+        "frontend/src/components/auth/ProfileSetupModal.tsx",
+        "frontend/src/components/auth/ProtectedRoute.tsx",
+        "frontend/src/components/layout/Header.tsx",
+        "frontend/src/hooks/useUserProfile.ts",
+        "frontend/src/hooks/useUserRole.ts"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-student-dashboard-displaying-profile-current-exam-level-messages-notices-homework-section-with-reference-images-and-live-class-access",
+      "featureTitle": "Build student dashboard displaying profile, current exam level, messages & notices, homework section with reference images, and live class access",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/student/HomeworkPanel.tsx",
+        "frontend/src/components/student/LiveClassEmbed.tsx",
+        "frontend/src/components/student/MessagesPanel.tsx",
+        "frontend/src/hooks/useStudentData.ts",
+        "frontend/src/pages/StudentDashboard.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-8"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-teacher-panel-to-add-students-approve-admissions-assign-exam-levels-promote-students-view-student-progress-and-manage-student-list",
+      "featureTitle": "Build teacher panel to add students, approve admissions, assign exam levels, promote students, view student progress, and manage student list",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/teacher/PromoteStudentModal.tsx",
+        "frontend/src/components/teacher/StudentCard.tsx",
+        "frontend/src/hooks/usePromoteStudent.ts",
+        "frontend/src/hooks/useSearchStudents.ts",
+        "frontend/src/pages/TeacherAdmissionsPage.tsx",
+        "frontend/src/pages/TeacherDashboard.tsx",
+        "frontend/src/pages/TeacherStudentManagementPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-11"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-message-and-homework-system-allowing-teachers-to-send-level-specific-notices-assign-homework-upload-reference-images-and-send-exam-instructions",
+      "featureTitle": "Create message and homework system allowing teachers to send level-specific notices, assign homework, upload reference images, and send exam instructions",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/teacher/MessageComposer.tsx",
+        "frontend/src/hooks/useSendMessage.ts",
+        "frontend/src/pages/TeacherMessagesPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-12"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-art-specific-teaching-features-including-reference-painting-upload-sketch-demo-images-color-guide-images-and-level-wise-practice-topics",
+      "featureTitle": "Implement art-specific teaching features including reference painting upload, sketch demo images, color guide images, and level-wise practice topics",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/TeacherResourcesPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-13"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-high-quality-live-class-streaming-system-embedded-in-dashboard-where-teachers-broadcast-and-students-watch",
+      "featureTitle": "Build high-quality live class streaming system embedded in dashboard where teachers broadcast and students watch",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/TeacherLiveStreamPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-14"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-gallery-management-system-for-teachers-to-upload-best-artworks-tag-by-level-and-set-public-or-private-visibility",
+      "featureTitle": "Create gallery management system for teachers to upload best artworks, tag by level, and set public or private visibility",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/teacher/ArtworkUploadForm.tsx",
+        "frontend/src/hooks/useUploadArtwork.ts",
+        "frontend/src/pages/TeacherGalleryManagementPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-15"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-advanced-teacher-dashboard-with-analytics-showing-total-students-students-per-level-growth-tracking-and-charts",
+      "featureTitle": "Build advanced teacher dashboard with analytics showing total students, students per level, growth tracking, and charts",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/analytics/StatsCard.tsx",
+        "frontend/src/components/analytics/StudentLevelChart.tsx",
+        "frontend/src/pages/TeacherAnalyticsPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-16"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-design-child-friendly-colorful-ui-with-light-theme-easy-navigation-and-full-mobile-responsiveness-across-all-pages",
+      "featureTitle": "Design child-friendly, colorful UI with light theme, easy navigation, and full mobile responsiveness across all pages",
+      "files": [
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-19"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

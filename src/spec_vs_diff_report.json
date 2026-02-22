@@ -1,0 +1,142 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-22T10:42:09.491Z",
+  "summary": "The implementation appears to be a comprehensive art academy platform with most requirements addressed. The diff shows frontend components, backend data models, authentication, student/teacher dashboards, gallery management, and messaging systems. However, several key requirements are either partially implemented or missing evidence in the truncated diff, including the live streaming functionality, homework reference images system, and certain admission workflow features.",
+  "missing_requirements": [
+    {
+      "id": "REQ-1",
+      "requirement": "Homepage must display location & contact info, and academy information in child-friendly visual style",
+      "reason": "HomePage component is referenced in routing but its content is not included in the diff. Cannot verify if academy information, location, and contact details are displayed on the homepage.",
+      "evidence": [
+        "frontend/src/App.tsx"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "requirement": "Create public admission page with information about the admission process and exam system",
+      "reason": "AdmissionInfoPage component is referenced in routing but its implementation is not included in the diff. Cannot verify if admission process and exam system information are properly explained.",
+      "evidence": [
+        "frontend/src/App.tsx"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "requirement": "Online admission form must include artwork sample upload with teacher approval workflow",
+      "reason": "AdmissionFormPage is referenced but not shown in diff. The backend shows AdmissionForm type and approval field, but the complete form implementation and teacher approval workflow UI are not visible.",
+      "evidence": [
+        "frontend/src/App.tsx",
+        "backend/main.mo"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "requirement": "Automatic generation of admission number, login account, and assigned exam level upon teacher approval",
+      "reason": "Backend shows AdmissionForm type with approval field, but no evidence of automatic admission number generation, account creation logic, or the approval trigger mechanism in the truncated code.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "requirement": "Student dashboard must display homework section with reference images",
+      "reason": "HomeworkPanel component exists but only shows placeholder for no homework. No evidence of homework display with reference images functionality.",
+      "evidence": [
+        "frontend/src/components/student/HomeworkPanel.tsx"
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "requirement": "Message and homework system allowing teachers to upload reference images and assign homework",
+      "reason": "MessageComposer only sends text messages. No evidence of homework assignment creation with multiple reference image uploads, or level-specific targeting beyond basic messaging.",
+      "evidence": [
+        "frontend/src/components/teacher/MessageComposer.tsx"
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "requirement": "Art-specific teaching features including reference painting upload, sketch demo images, color guide images, and level-wise practice topics",
+      "reason": "TeacherResourcesPage is referenced in routing but not included in diff. No evidence of reference painting upload, sketch demos, color guides, or practice topics management.",
+      "evidence": [
+        "frontend/src/App.tsx"
+      ]
+    },
+    {
+      "id": "REQ-14",
+      "requirement": "High-quality live class streaming system embedded in dashboard where teachers broadcast and students watch",
+      "reason": "LiveClassEmbed shows only a placeholder message. TeacherLiveStreamPage is referenced but not included. No evidence of actual streaming implementation, broadcast controls, or video embedding.",
+      "evidence": [
+        "frontend/src/components/student/LiveClassEmbed.tsx",
+        "frontend/src/App.tsx"
+      ]
+    },
+    {
+      "id": "REQ-16",
+      "requirement": "Advanced teacher dashboard with analytics showing total students, students per level, growth tracking, and charts",
+      "reason": "TeacherAnalyticsPage is referenced but not included in diff. StatsCard and StudentLevelChart components exist but the complete analytics dashboard implementation with growth tracking is not visible.",
+      "evidence": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/analytics/StatsCard.tsx"
+      ]
+    }
+  ],
+  "hallucinated_features": [],
+  "confidence": 0.65,
+  "changed_files": [
+    "all_files_summary.json",
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/components/analytics/StatsCard.tsx",
+    "frontend/src/components/analytics/StudentLevelChart.tsx",
+    "frontend/src/components/auth/AccessDeniedScreen.tsx",
+    "frontend/src/components/auth/LoginButton.tsx",
+    "frontend/src/components/auth/ProfileSetupModal.tsx",
+    "frontend/src/components/auth/ProtectedRoute.tsx",
+    "frontend/src/components/common/WhatsAppButton.tsx",
+    "frontend/src/components/forms/ArtworkUpload.tsx",
+    "frontend/src/components/gallery/ArtworkCard.tsx",
+    "frontend/src/components/layout/Footer.tsx",
+    "frontend/src/components/layout/Header.tsx",
+    "frontend/src/components/layout/Layout.tsx",
+    "frontend/src/components/student/HomeworkPanel.tsx",
+    "frontend/src/components/student/LiveClassEmbed.tsx",
+    "frontend/src/components/student/MessagesPanel.tsx",
+    "frontend/src/components/teacher/ArtworkUploadForm.tsx",
+    "frontend/src/components/teacher/MessageComposer.tsx",
+    "frontend/src/components/teacher/PromoteStudentModal.tsx",
+    "frontend/src/components/teacher/StudentCard.tsx",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/usePromoteStudent.ts",
+    "frontend/src/hooks/usePublicGallery.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/hooks/useSearchStudents.ts",
+    "frontend/src/hooks/useSendMessage.ts",
+    "frontend/src/hooks/useStudentData.ts",
+    "frontend/src/hooks/useSubmitAdmission.ts",
+    "frontend/src/hooks/useUploadArtwork.ts",
+    "frontend/src/hooks/useUserProfile.ts",
+    "frontend/src/hooks/useUserRole.ts",
+    "frontend/src/index.css",
+    "frontend/src/main.tsx",
+    "frontend/src/pages/AdmissionFormPage.tsx",
+    "frontend/src/pages/AdmissionInfoPage.tsx",
+    "frontend/src/pages/HomePage.tsx",
+    "frontend/src/pages/PublicGalleryPage.tsx",
+    "frontend/src/pages/StudentDashboard.tsx",
+    "frontend/src/pages/TeacherAdmissionsPage.tsx",
+    "frontend/src/pages/TeacherAnalyticsPage.tsx",
+    "frontend/src/pages/TeacherDashboard.tsx",
+    "frontend/src/pages/TeacherGalleryManagementPage.tsx",
+    "frontend/src/pages/TeacherLiveStreamPage.tsx",
+    "frontend/src/pages/TeacherMessagesPage.tsx",
+    "frontend/src/pages/TeacherResourcesPage.tsx",
+    "frontend/src/pages/TeacherStudentManagementPage.tsx",
+    "frontend/src/utils/urlParams.ts",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}

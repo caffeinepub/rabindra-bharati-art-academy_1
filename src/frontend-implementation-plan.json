@@ -1,0 +1,490 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Rabindra Bharati Art Academy Frontend Implementation",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Create artistic, childhood-friendly homepage with academy information, location, contact, and mobile-friendly design",
+      "acceptanceCriteria": [
+        "Homepage displays academy information in a child-friendly visual style",
+        "About section describes the academy",
+        "Location and contact information is clearly displayed",
+        "Layout is responsive and works on mobile devices"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "create",
+          "description": "Create homepage component with hero section using the generated hero-banner.dim_1920x600.png from frontend/public/assets/generated/, academy information section, about section, location and contact section. Use colorful, child-friendly design with the academy-logo.dim_256x256.png from frontend/public/assets/generated/. Ensure full mobile responsiveness."
+        },
+        {
+          "path": "frontend/src/components/layout/Header.tsx",
+          "operation": "create",
+          "description": "Create header component with academy logo (frontend/public/assets/generated/academy-logo.dim_256x256.png), navigation menu, and login button. Mobile-friendly with hamburger menu for small screens."
+        },
+        {
+          "path": "frontend/src/components/layout/Footer.tsx",
+          "operation": "create",
+          "description": "Create footer component with contact information, social links, and copyright notice. Child-friendly styling."
+        },
+        {
+          "path": "frontend/src/components/layout/Layout.tsx",
+          "operation": "create",
+          "description": "Create main layout component wrapping Header, page content, and Footer. Apply consistent background colors and spacing. Ensure mobile responsiveness with proper viewport handling."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Configure React Router with HomePage as default route (/). Wrap all routes with Layout component. Import and render WhatsAppButton component globally."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Create public admission page with information about the admission process and exam system",
+      "acceptanceCriteria": [
+        "Admission page explains the application process",
+        "Exam system information is accessible to visitors",
+        "Page is publicly accessible without login"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/AdmissionInfoPage.tsx",
+          "operation": "create",
+          "description": "Create public admission information page explaining the admission process, exam system with all 11 levels (Adhya through 8th Year), requirements, and timeline. Include visual illustrations using art-supplies-illustration.dim_800x600.png from frontend/public/assets/generated/. Link to the admission form page. Publicly accessible without authentication."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for AdmissionInfoPage at /admissions. Make publicly accessible without authentication."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Create public gallery page displaying best student artwork",
+      "acceptanceCriteria": [
+        "Gallery displays artwork uploaded by teachers",
+        "Only artworks marked as public are visible",
+        "Artwork can be tagged by level",
+        "Gallery is accessible without login"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/PublicGalleryPage.tsx",
+          "operation": "create",
+          "description": "Create public gallery page that fetches and displays public artworks using getPublicArtworks() backend method. Use ExternalBlob.getDirectURL() to display images with streaming and caching. Show artwork organized by exam level with filtering options. Use gallery-placeholder.dim_400x300.png from frontend/public/assets/generated/ when no artworks are available. Accessible without authentication."
+        },
+        {
+          "path": "frontend/src/hooks/usePublicGallery.ts",
+          "operation": "create",
+          "description": "Create React Query hook to fetch public artworks using getPublicArtworks() backend method. Handle loading and error states."
+        },
+        {
+          "path": "frontend/src/components/gallery/ArtworkCard.tsx",
+          "operation": "create",
+          "description": "Create artwork card component to display individual artwork with image (using ExternalBlob.getDirectURL()), title, level tag, and artist information. Child-friendly styling with colorful borders."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for PublicGalleryPage at /gallery. Make publicly accessible without authentication."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Add floating WhatsApp chat button for visitor communication",
+      "acceptanceCriteria": [
+        "WhatsApp button floats on all public pages",
+        "Button opens WhatsApp chat when clicked",
+        "Button is mobile-friendly"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/common/WhatsAppButton.tsx",
+          "operation": "create",
+          "description": "Create floating WhatsApp chat button component with fixed positioning (bottom-right corner). Button opens WhatsApp chat with academy contact number. Colorful, child-friendly icon. Mobile-responsive with appropriate sizing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Build online admission form collecting student details, guardian details, and artwork sample upload with teacher approval workflow",
+      "acceptanceCriteria": [
+        "Form collects student personal information",
+        "Form collects guardian contact details",
+        "Students can upload artwork samples",
+        "Submission enters pending state requiring teacher approval",
+        "Form validation ensures required fields are complete"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/AdmissionFormPage.tsx",
+          "operation": "create",
+          "description": "Create admission form page with fields for student name, guardian name, exam level selection, and artwork sample upload. Use ExternalBlob.fromBytes() for artwork upload with progress tracking using withUploadProgress(). Call submitAdmissionForm() backend method on submission. Show success message with generated admission ID. Include form validation. Publicly accessible without authentication. Verify blob-storage component usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/hooks/useSubmitAdmission.ts",
+          "operation": "create",
+          "description": "Create React Query mutation hook for submitting admission form using submitAdmissionForm() backend method with student name, guardian name, level, and artwork ExternalBlob. Handle loading, success, and error states."
+        },
+        {
+          "path": "frontend/src/components/forms/ArtworkUpload.tsx",
+          "operation": "create",
+          "description": "Create artwork upload component with drag-and-drop support, file preview, and upload progress bar. Use ExternalBlob.fromBytes() and withUploadProgress() for tracking. Child-friendly styling with visual feedback. Verify blob-storage component usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for AdmissionFormPage at /apply. Make publicly accessible without authentication."
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Create secure login system with separate student and teacher login, role-based access control, and no public signup",
+      "acceptanceCriteria": [
+        "Students can log in with their credentials",
+        "Teachers can log in with their credentials",
+        "Users can only access features allowed by their role",
+        "No public registration page exists",
+        "Authentication is secure"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/auth/LoginButton.tsx",
+          "operation": "create",
+          "description": "Use the authorization component to create login button using Internet Identity. Handle login/logout with useInternetIdentity hook. Clear query cache on logout. Show loading state during authentication. Reference authorization component usage instructions."
+        },
+        {
+          "path": "frontend/src/components/auth/ProfileSetupModal.tsx",
+          "operation": "create",
+          "description": "Use the authorization component to create modal for first-time profile setup. Show when user logs in without existing profile (getCallerUserProfile returns null). Collect user name and call saveCallerUserProfile(). Prevent flash by checking both actor availability and query fetch status. Reference authorization component usage instructions."
+        },
+        {
+          "path": "frontend/src/hooks/useUserProfile.ts",
+          "operation": "create",
+          "description": "Use the authorization component to create React Query hook for fetching current user profile using getCallerUserProfile(). Handle actor dependency properly to prevent modal flash. Cache profile data with ['currentUserProfile'] query key. Reference authorization component usage instructions."
+        },
+        {
+          "path": "frontend/src/hooks/useUserRole.ts",
+          "operation": "create",
+          "description": "Use the authorization component to create React Query hook for fetching current user role using getCallerUserRole() backend method. Determine if user is student (role='user') or teacher (role='admin'). Reference authorization component usage instructions."
+        },
+        {
+          "path": "frontend/src/components/auth/ProtectedRoute.tsx",
+          "operation": "create",
+          "description": "Use the authorization component to create protected route wrapper component that checks authentication and role before rendering children. Redirect to login or show AccessDeniedScreen if unauthorized. Support role parameter for admin-only routes. Reference authorization component usage instructions."
+        },
+        {
+          "path": "frontend/src/components/auth/AccessDeniedScreen.tsx",
+          "operation": "create",
+          "description": "Use the authorization component to create access denied screen shown when non-admin users try to access teacher pages or unauthenticated users try to access protected pages. Display friendly message with link back to appropriate page. Child-friendly design. Reference authorization component usage instructions."
+        },
+        {
+          "path": "frontend/src/components/layout/Header.tsx",
+          "operation": "modify",
+          "description": "Integrate LoginButton component into header. Show user name when authenticated. Include navigation links based on user role (student or teacher dashboard)."
+        }
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "summary": "Build student dashboard displaying profile, current exam level, messages & notices, homework section with reference images, and live class access",
+      "acceptanceCriteria": [
+        "Dashboard shows student profile information",
+        "Current exam level is prominently displayed",
+        "Student can view messages and notices for their level",
+        "Homework assignments are listed with reference images",
+        "Live class stream is embedded and accessible",
+        "Only level-specific content is shown"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/StudentDashboard.tsx",
+          "operation": "create",
+          "description": "Use the authorization component to create student dashboard protected by authentication check. Display welcome banner using dashboard-welcome.dim_600x400.png from frontend/public/assets/generated/, student profile, current exam level badge, messages section, homework section with reference images (using ExternalBlob.getDirectURL()), and embedded live class stream. Fetch student data using getStudent() backend method with studentId from user profile. Guard access - only authenticated users with role='user' can access. Reference authorization component usage instructions."
+        },
+        {
+          "path": "frontend/src/hooks/useStudentData.ts",
+          "operation": "create",
+          "description": "Create React Query hook to fetch student data using getStudent(studentId) backend method. Return student profile, level, messages, and exam history. Handle loading and error states."
+        },
+        {
+          "path": "frontend/src/components/student/MessagesPanel.tsx",
+          "operation": "create",
+          "description": "Create messages panel component displaying level-specific messages from teachers. Show message content and date. Child-friendly card design with colorful accents."
+        },
+        {
+          "path": "frontend/src/components/student/HomeworkPanel.tsx",
+          "operation": "create",
+          "description": "Create homework panel component displaying assignments with reference images using ExternalBlob.getDirectURL() for each image. Show assignment description and uploaded images in a grid. Child-friendly layout."
+        },
+        {
+          "path": "frontend/src/components/student/LiveClassEmbed.tsx",
+          "operation": "create",
+          "description": "Create live class embed component with embedded video player. Display message when no live class is active. Ensure high-quality streaming with responsive sizing. Child-friendly frame styling."
+        },
+        {
+          "path": "frontend/src/components/student/ResourcesPanel.tsx",
+          "operation": "create",
+          "description": "Create resources panel for student dashboard displaying level-specific teaching materials. Show reference images, sketch demos, and color guides using ExternalBlob.getDirectURL() for streaming. Organized by resource type with image galleries. Child-friendly layout."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add protected route for StudentDashboard at /student. Wrap with ProtectedRoute requiring user authentication and role='user'."
+        }
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "summary": "Build teacher panel to add students, approve admissions, assign exam levels, promote students, view student progress, and manage student list",
+      "acceptanceCriteria": [
+        "Teachers can manually add new students",
+        "Teachers can approve or reject admission applications",
+        "Teachers can assign initial exam levels",
+        "Teachers can promote students to next level",
+        "Teachers can view individual student progress",
+        "Teachers can see and manage complete student list"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/TeacherDashboard.tsx",
+          "operation": "create",
+          "description": "Use the authorization component to create teacher dashboard protected by admin role check. Display header with teacher-panel-header.dim_800x300.png from frontend/public/assets/generated/, navigation to teacher features (student management, admissions, messages, gallery, analytics), and overview statistics. Guard access - only authenticated users with role='admin' can access. Show AccessDeniedScreen for non-admin users. Reference authorization component usage instructions."
+        },
+        {
+          "path": "frontend/src/pages/TeacherStudentManagementPage.tsx",
+          "operation": "create",
+          "description": "Use the authorization component to create student management page for teachers. Display student list with search using searchStudentsByName() backend method, student cards showing name/level/progress, promote student action using promoteStudent() backend method with level selection, and view detailed student progress. Admin-only access. Reference authorization component usage instructions."
+        },
+        {
+          "path": "frontend/src/pages/TeacherAdmissionsPage.tsx",
+          "operation": "create",
+          "description": "Use the authorization component to create admissions management page showing pending admission applications. Display applicant details, uploaded artwork preview (using ExternalBlob.getDirectURL()), and approve/reject actions using approveAdmission() backend method. Admin-only access. Reference authorization component usage instructions."
+        },
+        {
+          "path": "frontend/src/hooks/useSearchStudents.ts",
+          "operation": "create",
+          "description": "Create React Query hook for searching students by name using searchStudentsByName() backend method. Handle debounced search input and loading states."
+        },
+        {
+          "path": "frontend/src/hooks/usePromoteStudent.ts",
+          "operation": "create",
+          "description": "Create React Query mutation hook for promoting student using promoteStudent(studentId, newLevel) backend method. Invalidate student queries on success."
+        },
+        {
+          "path": "frontend/src/hooks/useApproveAdmission.ts",
+          "operation": "create",
+          "description": "Create React Query mutation hook for approving admission using approveAdmission(id) backend method. Invalidate admission queries on success."
+        },
+        {
+          "path": "frontend/src/components/teacher/StudentCard.tsx",
+          "operation": "create",
+          "description": "Create student card component displaying student name, current level, exam history summary, and action buttons (view details, promote). Colorful card design."
+        },
+        {
+          "path": "frontend/src/components/teacher/PromoteStudentModal.tsx",
+          "operation": "create",
+          "description": "Create modal for promoting student with level selection dropdown (all 11 levels in order). Confirm action and call promoteStudent mutation. Show success feedback."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add protected routes for TeacherDashboard (/teacher), TeacherStudentManagementPage (/teacher/students), and TeacherAdmissionsPage (/teacher/admissions). Wrap with ProtectedRoute requiring authentication and role='admin'."
+        }
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "summary": "Create message and homework system allowing teachers to send level-specific notices, assign homework, upload reference images, and send exam instructions",
+      "acceptanceCriteria": [
+        "Teachers can create messages targeted to specific exam levels",
+        "Teachers can assign homework with descriptions",
+        "Teachers can upload multiple reference images per assignment",
+        "Teachers can send exam-related instructions",
+        "Students only receive messages for their current level"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/TeacherMessagesPage.tsx",
+          "operation": "create",
+          "description": "Use the authorization and blob-storage components to create message management page for teachers. Form for composing new message with content, level targeting dropdown, and optional reference image uploads using ExternalBlob.fromBytes() with progress tracking. Call sendMessage() backend method. Display sent message history. Admin-only access. Verify blob-storage component usage instructions before implementing. Reference authorization component usage instructions."
+        },
+        {
+          "path": "frontend/src/hooks/useSendMessage.ts",
+          "operation": "create",
+          "description": "Create React Query mutation hook for sending messages using sendMessage(content) backend method. Handle loading and success states."
+        },
+        {
+          "path": "frontend/src/components/teacher/MessageComposer.tsx",
+          "operation": "create",
+          "description": "Use the blob-storage component to create message composer component with textarea for content, level selector, and image upload support using ExternalBlob.fromBytes(). Show upload progress for images using withUploadProgress(). Colorful, intuitive form layout. Verify blob-storage component usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add protected route for TeacherMessagesPage at /teacher/messages. Wrap with ProtectedRoute requiring authentication and role='admin'."
+        }
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "summary": "Implement art-specific teaching features including reference painting upload, sketch demo images, color guide images, and level-wise practice topics",
+      "acceptanceCriteria": [
+        "Teachers can upload reference paintings",
+        "Teachers can upload sketch demonstrations",
+        "Teachers can upload color guidance materials",
+        "Practice topics can be assigned per level",
+        "Students can view all teaching materials for their level"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/TeacherResourcesPage.tsx",
+          "operation": "create",
+          "description": "Use the authorization and blob-storage components to create teaching resources management page for teachers. Interface for uploading reference paintings, sketch demos, color guides using ExternalBlob.fromBytes() with progress tracking. Organize uploads by level and resource type. Display existing resources with preview (using ExternalBlob.getDirectURL()). Admin-only access. Verify blob-storage component usage instructions before implementing. Reference authorization component usage instructions."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add protected route for TeacherResourcesPage at /teacher/resources. Wrap with ProtectedRoute requiring authentication and role='admin'."
+        }
+      ]
+    },
+    {
+      "id": "REQ-14",
+      "summary": "Build high-quality live class streaming system embedded in dashboard where teachers broadcast and students watch",
+      "acceptanceCriteria": [
+        "Live stream is embedded directly in student dashboard",
+        "Only teachers can start and control the broadcast",
+        "Students can watch with clear video quality",
+        "Stream performs better than typical video conferencing tools",
+        "No external application required"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/TeacherLiveStreamPage.tsx",
+          "operation": "create",
+          "description": "Use the authorization component to create live streaming control page for teachers. Interface for starting/stopping broadcast, stream settings, and viewer count. Embed streaming controls with high-quality video encoding options. Admin-only access. Reference authorization component usage instructions."
+        },
+        {
+          "path": "frontend/src/components/streaming/StreamControls.tsx",
+          "operation": "create",
+          "description": "Create stream control component for teachers with start/stop broadcast buttons, quality settings, and live status indicator. Colorful, intuitive controls."
+        },
+        {
+          "path": "frontend/src/components/streaming/StreamViewer.tsx",
+          "operation": "create",
+          "description": "Create stream viewer component for students with embedded video player, fullscreen option, and connection status. Optimized for high-quality playback. Child-friendly player controls."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add protected route for TeacherLiveStreamPage at /teacher/stream. Wrap with ProtectedRoute requiring authentication and role='admin'."
+        }
+      ]
+    },
+    {
+      "id": "REQ-15",
+      "summary": "Create gallery management system for teachers to upload best artworks, tag by level, and set public or private visibility",
+      "acceptanceCriteria": [
+        "Teachers can upload artwork images",
+        "Each artwork can be tagged with exam level",
+        "Teachers can mark artworks as public (visible to all) or private (teacher-only)",
+        "Public artworks appear in the public gallery",
+        "Gallery is organized by level"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/TeacherGalleryManagementPage.tsx",
+          "operation": "create",
+          "description": "Use the authorization and blob-storage components to create gallery management page for teachers. Upload form for artwork with title, artist selection, level tag, visibility toggle (public/private), and image upload using ExternalBlob.fromBytes() with progress tracking. Call uploadArtwork() backend method. Display existing artworks with edit/delete options. Admin-only access. Verify blob-storage component usage instructions before implementing. Reference authorization component usage instructions."
+        },
+        {
+          "path": "frontend/src/hooks/useUploadArtwork.ts",
+          "operation": "create",
+          "description": "Use the blob-storage component to create React Query mutation hook for uploading artwork using uploadArtwork(title, artistId, level, isPublic, image) backend method with ExternalBlob. Handle loading state and upload progress. Verify blob-storage component usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/teacher/ArtworkUploadForm.tsx",
+          "operation": "create",
+          "description": "Use the blob-storage component to create artwork upload form with fields for title, artist selection, level dropdown, public/private radio buttons, and image upload with preview. Use ExternalBlob.fromBytes() and withUploadProgress() for upload tracking. Colorful form styling. Verify blob-storage component usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add protected route for TeacherGalleryManagementPage at /teacher/gallery. Wrap with ProtectedRoute requiring authentication and role='admin'."
+        }
+      ]
+    },
+    {
+      "id": "REQ-16",
+      "summary": "Build advanced teacher dashboard with analytics showing total students, students per level, growth tracking, and charts",
+      "acceptanceCriteria": [
+        "Dashboard displays total number of students",
+        "Dashboard shows breakdown of students by exam level",
+        "Growth metrics track student enrollment over time",
+        "Visual charts present analytics data",
+        "Dashboard provides actionable insights"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/TeacherAnalyticsPage.tsx",
+          "operation": "create",
+          "description": "Use the authorization component to create analytics page showing statistics: total students, students per level (bar chart or pie chart), enrollment growth over time (line chart). Compute analytics from student data fetched using searchStudentsByName(''). Use chart library (e.g., recharts) for visualizations. Admin-only access. Colorful, data-rich dashboard. Reference authorization component usage instructions."
+        },
+        {
+          "path": "frontend/src/components/analytics/StudentLevelChart.tsx",
+          "operation": "create",
+          "description": "Create chart component displaying student distribution across exam levels. Use bar chart or pie chart with colorful segments. Show count for each of the 11 levels."
+        },
+        {
+          "path": "frontend/src/components/analytics/EnrollmentGrowthChart.tsx",
+          "operation": "create",
+          "description": "Create line chart component showing student enrollment growth over time. Plot student count by month/year. Colorful line with data points."
+        },
+        {
+          "path": "frontend/src/components/analytics/StatsCard.tsx",
+          "operation": "create",
+          "description": "Create statistics card component for displaying key metrics (total students, avg per level, etc.). Colorful card with icon and number. Reusable for multiple stats."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add protected route for TeacherAnalyticsPage at /teacher/analytics. Wrap with ProtectedRoute requiring authentication and role='admin'."
+        }
+      ]
+    },
+    {
+      "id": "REQ-19",
+      "summary": "Design child-friendly, colorful UI with light theme, easy navigation, and full mobile responsiveness across all pages",
+      "acceptanceCriteria": [
+        "UI uses bright, welcoming colors appropriate for children",
+        "Layout is intuitive and easy to navigate",
+        "All pages are fully responsive on mobile devices",
+        "Typography and spacing are child-friendly",
+        "Visual design is consistent across the application"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Define child-friendly color palette with bright, welcoming colors (pastels, primary colors). Set light theme as default. Define typography with readable fonts and appropriate sizing for children. Add global spacing and border-radius utilities. Ensure mobile-first responsive breakpoints."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend Tailwind config with custom child-friendly color palette, rounded corners, increased spacing scale, and custom font sizes. Add theme colors for primary, secondary, accent, and background."
+        },
+        {
+          "path": "frontend/src/components/layout/Navigation.tsx",
+          "operation": "create",
+          "description": "Use the authorization component to create navigation menu component with links to public pages (Home, Admissions, Gallery) and authenticated pages (Student Dashboard, Teacher Dashboard) based on user role. Show login button when not authenticated. Hide role-specific links for users without permission. Mobile-friendly with responsive menu. Reference authorization component usage instructions."
+        }
+      ]
+    }
+  ]
+}

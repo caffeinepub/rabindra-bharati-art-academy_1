@@ -1,0 +1,268 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Digital art academy platform for Rabindra Bharati Art Academy with admission system, student/teacher dashboards, exam level progression, homework assignments, live classes, and gallery management",
+  "architectural_notes": [
+    "Multi-role system (Student, Teacher) with role-based access control",
+    "Cloud-based MongoDB database for all data persistence",
+    "Live streaming infrastructure for embedded classroom functionality",
+    "Image upload and storage for artwork samples and teaching references",
+    "Level-based content filtering ensuring students only see relevant materials",
+    "Exam progression tracking through 13 distinct levels (Adhya through 8th Year)",
+    "Teacher approval workflow for admissions and student promotions",
+    "Mobile-first responsive design for child-friendly interface"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Artistic, colorful academy logo with paintbrush and palette motifs suitable for children (academy-logo.dim_256x256.png)\n- Warm, inviting hero banner image showing children painting in an art classroom (hero-banner.dim_1920x600.png)\n- Friendly illustration of art supplies including paintbrushes, palettes, and canvases (art-supplies-illustration.dim_800x600.png)\n- Gallery placeholder image showing an empty easel waiting for artwork (gallery-placeholder.dim_400x300.png)\n- Student dashboard welcome illustration with colorful art elements (dashboard-welcome.dim_600x400.png)\n- Teacher panel header illustration showing instructor with students (teacher-panel-header.dim_800x300.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-artistic-childhood-friendly-homepage-with-information-about-the-academy-location-contact-info-and-mobile-friendly-design",
+      "title": "Create artistic, childhood-friendly homepage with information about the academy, location & contact info, and mobile-friendly design",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-public-admission-page-with-information-about-the-admission-process-and-exam-system",
+      "title": "Create public admission page with information about the admission process and exam system",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-public-gallery-page-displaying-best-student-artwork",
+      "title": "Create public gallery page displaying best student artwork",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-floating-whatsapp-chat-button-for-visitor-communication",
+      "title": "Add floating WhatsApp chat button for visitor communication",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-online-admission-form-collecting-student-details-guardian-details-and-artwork-sample-upload-with-teacher-approval-workflow",
+      "title": "Build online admission form collecting student details, guardian details, and artwork sample upload with teacher approval workflow",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-secure-login-system-with-separate-student-and-teacher-login-role-based-access-control-and-no-public-signup",
+      "title": "Create secure login system with separate student and teacher login, role-based access control, and no public signup",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-student-dashboard-displaying-profile-current-exam-level-messages-notices-homework-section-with-reference-images-and-live-class-access",
+      "title": "Build student dashboard displaying profile, current exam level, messages & notices, homework section with reference images, and live class access",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-teacher-panel-to-add-students-approve-admissions-assign-exam-levels-promote-students-view-student-progress-and-manage-student-list",
+      "title": "Build teacher panel to add students, approve admissions, assign exam levels, promote students, view student progress, and manage student list",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-message-and-homework-system-allowing-teachers-to-send-level-specific-notices-assign-homework-upload-reference-images-and-send-exam-instructions",
+      "title": "Create message and homework system allowing teachers to send level-specific notices, assign homework, upload reference images, and send exam instructions",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-art-specific-teaching-features-including-reference-painting-upload-sketch-demo-images-color-guide-images-and-level-wise-practice-topics",
+      "title": "Implement art-specific teaching features including reference painting upload, sketch demo images, color guide images, and level-wise practice topics",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-high-quality-live-class-streaming-system-embedded-in-dashboard-where-teachers-broadcast-and-students-watch",
+      "title": "Build high-quality live class streaming system embedded in dashboard where teachers broadcast and students watch",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-gallery-management-system-for-teachers-to-upload-best-artworks-tag-by-level-and-set-public-or-private-visibility",
+      "title": "Create gallery management system for teachers to upload best artworks, tag by level, and set public or private visibility",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-advanced-teacher-dashboard-with-analytics-showing-total-students-students-per-level-growth-tracking-and-charts",
+      "title": "Build advanced teacher dashboard with analytics showing total students, students per level, growth tracking, and charts",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-design-child-friendly-colorful-ui-with-light-theme-easy-navigation-and-full-mobile-responsiveness-across-all-pages",
+      "title": "Design child-friendly, colorful UI with light theme, easy navigation, and full mobile responsiveness across all pages",
+      "reqIds": [
+        "REQ-19"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Public-facing website with homepage, about, location/contact, admission page, public gallery, and WhatsApp chat button",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Online admission system with form, artwork upload, guardian details, teacher approval, and auto-generation of admission number and login",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Secure login system with student/teacher roles and role-based access control",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Student dashboard with profile, exam level display, messages, homework section with reference images, and live class access",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Multi-level exam progression system (Adhya → Madhya → Purna → 1st-8th Year) with one exam per year and teacher-controlled promotion",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Exam history tracking stored in database, accessible only to teachers for promotions and certificates",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Teacher panel to add students, approve admissions, assign exam levels, promote students, and view progress",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Message and homework system allowing teachers to send level-specific notices, assignments, and reference images",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Art-specific teaching features including reference painting upload, sketch demos, color guides, and level-wise practice topics",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "High-quality live class streaming system embedded in dashboard with teacher broadcast and student viewing",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-11",
+      "summary": "Gallery system for teachers to upload best artworks, tag by level, and set public/private visibility",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-12",
+      "summary": "Advanced teacher dashboard with analytics showing total students, students per level, growth tracking, and charts",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-13",
+      "summary": "Cloud-based MongoDB database storing students, levels, exam history, messages, homework, and admission data",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-14",
+      "summary": "Security features including role-based access, password encryption, and teacher-controlled system with no public student data",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-15",
+      "summary": "Child-friendly, colorful, mobile-responsive UI with easy navigation",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-21",
+      "summary": "Implement automatic generation of admission number, login account, and assigned exam level upon teacher approval of admission",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-24",
+      "summary": "Implement exam level progression system with levels: Adhya, Madhya, Purna, 1st Year through 8th Year, with one exam per year and teacher-controlled promotion",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-25",
+      "summary": "Store exam history in database accessible only to teachers for tracking promotions and generating certificates",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-32",
+      "summary": "Implement backend data models and storage for students, exam levels, exam history, messages, homework, and admission data",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-33",
+      "summary": "Implement security features including role-based access control, password encryption, and protection of student data from public access",
+      "reqIds": [
+        "REQ-18"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Rabindra Bharati Art Academy",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

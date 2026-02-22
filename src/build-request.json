@@ -1,0 +1,459 @@
+{
+  "kind": "build_request",
+  "title": "Build complete Rabindra Bharati Art Academy digital platform",
+  "projectName": "Rabindra Bharati Art Academy",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create artistic, childhood-friendly homepage with information about the academy, location & contact info, and mobile-friendly design",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "🎨 Artistic, childhood-friendly homepage",
+          "🧑‍🏫 About the academy",
+          "📍 Location & contact info",
+          "📱 Mobile-friendly design"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Homepage displays academy information in a child-friendly visual style",
+        "About section describes the academy",
+        "Location and contact information is clearly displayed",
+        "Layout is responsive and works on mobile devices"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Create public admission page with information about the admission process and exam system",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "📢 Admission page",
+          "🎓 Information about exam system"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Admission page explains the application process",
+        "Exam system information is accessible to visitors",
+        "Page is publicly accessible without login"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Create public gallery page displaying best student artwork",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "🖼️ Public gallery (best student artwork)"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Gallery displays artwork uploaded by teachers",
+        "Only artworks marked as public are visible",
+        "Artwork can be tagged by level",
+        "Gallery is accessible without login"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Add floating WhatsApp chat button for visitor communication",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "💬 WhatsApp floating chat button"
+        ]
+      },
+      "acceptanceCriteria": [
+        "WhatsApp button floats on all public pages",
+        "Button opens WhatsApp chat when clicked",
+        "Button is mobile-friendly"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Build online admission form collecting student details, guardian details, and artwork sample upload with teacher approval workflow",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Online admission form",
+          "Student details collection",
+          "Artwork sample upload",
+          "Guardian details",
+          "Teacher approval required"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Form collects student personal information",
+        "Form collects guardian contact details",
+        "Students can upload artwork samples",
+        "Submission enters pending state requiring teacher approval",
+        "Form validation ensures required fields are complete"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Implement automatic generation of admission number, login account, and assigned exam level upon teacher approval of admission",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Auto creation of: Admission Number, Login account, Assigned exam level"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Unique admission number is generated automatically",
+        "Student login credentials are created",
+        "Initial exam level is assigned",
+        "Generation occurs only after teacher approval"
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Create secure login system with separate student and teacher login, role-based access control, and no public signup",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Student login",
+          "Teacher login",
+          "Secure authentication",
+          "Role-based access",
+          "No public signup"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Students can log in with their credentials",
+        "Teachers can log in with their credentials",
+        "Users can only access features allowed by their role",
+        "No public registration page exists",
+        "Authentication is secure"
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "text": "Build student dashboard displaying profile, current exam level, messages & notices, homework section with reference images, and live class access",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Profile view",
+          "Current exam level display",
+          "Messages & notices",
+          "Homework section",
+          "Homework reference images",
+          "Live class access"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Dashboard shows student profile information",
+        "Current exam level is prominently displayed",
+        "Student can view messages and notices for their level",
+        "Homework assignments are listed with reference images",
+        "Live class stream is embedded and accessible",
+        "Only level-specific content is shown"
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "text": "Implement exam level progression system with levels: Adhya, Madhya, Purna, 1st Year through 8th Year, with one exam per year and teacher-controlled promotion",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Adhya → Madhya → Purna → 1st Year → 2nd Year → 3rd Year → 4th Year → 5th Year → 6th Year → 7th Year → 8th Year → Next Level / Degree",
+          "Only ONE exam per year",
+          "Teacher promotes student",
+          "Student sees only current level"
+        ]
+      },
+      "acceptanceCriteria": [
+        "System supports all 11 exam levels in order",
+        "Students can only take one exam per year",
+        "Teachers can promote students to the next level",
+        "Students only see content for their current level",
+        "Level progression follows the defined sequence"
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "text": "Store exam history in database accessible only to teachers for tracking promotions and generating certificates",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Stored in database",
+          "Teacher-only access",
+          "Used for promotion & certificates"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Exam history records are persisted in database",
+        "Only teachers can view exam history",
+        "History includes student progression through levels",
+        "Data is available for certificate generation"
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "text": "Build teacher panel to add students, approve admissions, assign exam levels, promote students, view student progress, and manage student list",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Add students",
+          "Approve admissions",
+          "Assign exam level",
+          "Promote students",
+          "View student progress",
+          "Manage student list"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Teachers can manually add new students",
+        "Teachers can approve or reject admission applications",
+        "Teachers can assign initial exam levels",
+        "Teachers can promote students to next level",
+        "Teachers can view individual student progress",
+        "Teachers can see and manage complete student list"
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "text": "Create message and homework system allowing teachers to send level-specific notices, assign homework, upload reference images, and send exam instructions",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Send notice to specific level",
+          "Assign homework",
+          "Upload reference images",
+          "Send exam instructions",
+          "Only level-specific content"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Teachers can create messages targeted to specific exam levels",
+        "Teachers can assign homework with descriptions",
+        "Teachers can upload multiple reference images per assignment",
+        "Teachers can send exam-related instructions",
+        "Students only receive messages for their current level"
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "text": "Implement art-specific teaching features including reference painting upload, sketch demo images, color guide images, and level-wise practice topics",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Reference painting upload",
+          "Sketch demo images",
+          "Color guide images",
+          "Level-wise practice topics"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Teachers can upload reference paintings",
+        "Teachers can upload sketch demonstrations",
+        "Teachers can upload color guidance materials",
+        "Practice topics can be assigned per level",
+        "Students can view all teaching materials for their level"
+      ]
+    },
+    {
+      "id": "REQ-14",
+      "text": "Build high-quality live class streaming system embedded in dashboard where teachers broadcast and students watch",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "High-quality live streaming",
+          "Teacher-only broadcast",
+          "Students watch clearly",
+          "Embedded inside dashboard",
+          "No lag like Zoom"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Live stream is embedded directly in student dashboard",
+        "Only teachers can start and control the broadcast",
+        "Students can watch with clear video quality",
+        "Stream performs better than typical video conferencing tools",
+        "No external application required"
+      ]
+    },
+    {
+      "id": "REQ-15",
+      "text": "Create gallery management system for teachers to upload best artworks, tag by level, and set public or private visibility",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Upload best artworks",
+          "Tag by level",
+          "Choose public or private"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Teachers can upload artwork images",
+        "Each artwork can be tagged with exam level",
+        "Teachers can mark artworks as public (visible to all) or private (teacher-only)",
+        "Public artworks appear in the public gallery",
+        "Gallery is organized by level"
+      ]
+    },
+    {
+      "id": "REQ-16",
+      "text": "Build advanced teacher dashboard with analytics showing total students, students per level, growth tracking, and charts",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Total students",
+          "Students per level",
+          "Growth tracking",
+          "Charts & analytics"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Dashboard displays total number of students",
+        "Dashboard shows breakdown of students by exam level",
+        "Growth metrics track student enrollment over time",
+        "Visual charts present analytics data",
+        "Dashboard provides actionable insights"
+      ]
+    },
+    {
+      "id": "REQ-17",
+      "text": "Implement backend data models and storage for students, exam levels, exam history, messages, homework, and admission data",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Stores: Students, Levels, Exam history, Messages, Homework, Admission data"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Student records are persisted with profile data",
+        "Exam level definitions are stored",
+        "Exam history tracks student progression",
+        "Messages and notices are stored with level targeting",
+        "Homework assignments are persisted with reference images",
+        "Admission applications are stored with approval status"
+      ]
+    },
+    {
+      "id": "REQ-18",
+      "text": "Implement security features including role-based access control, password encryption, and protection of student data from public access",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Role-based access",
+          "Password encryption",
+          "No public student data",
+          "Teacher-controlled system"
+        ]
+      },
+      "acceptanceCriteria": [
+        "User roles (student, teacher) determine access permissions",
+        "Passwords are encrypted before storage",
+        "Student personal data is not exposed to public",
+        "Teachers control all administrative functions",
+        "Authentication tokens are secure"
+      ]
+    },
+    {
+      "id": "REQ-19",
+      "text": "Design child-friendly, colorful UI with light theme, easy navigation, and full mobile responsiveness across all pages",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Light & colorful UI",
+          "Child-friendly layout",
+          "Easy navigation",
+          "Works on mobile"
+        ]
+      },
+      "acceptanceCriteria": [
+        "UI uses bright, welcoming colors appropriate for children",
+        "Layout is intuitive and easy to navigate",
+        "All pages are fully responsive on mobile devices",
+        "Typography and spacing are child-friendly",
+        "Visual design is consistent across the application"
+      ]
+    }
+  ],
+  "constraints": [
+    "No public signup - all student accounts created through admission approval only",
+    "Students can only see content for their current exam level",
+    "Only one exam per year per student",
+    "Live streaming must be embedded in dashboard without external applications",
+    "Teacher approval required for all admissions",
+    "Exam history accessible only to teachers"
+  ],
+  "nonGoals": [
+    "Student artwork upload to portfolio (future feature)",
+    "Certificate generation (future feature)",
+    "Parent login portal (future feature)",
+    "Online fee payment (future feature)",
+    "Mobile app (future feature)",
+    "External database like MongoDB (platform uses Motoko backend storage)"
+  ],
+  "imageRequirements": {
+    "required": [
+      "Artistic, colorful academy logo with paintbrush and palette motifs suitable for children (academy-logo.dim_256x256.png)",
+      "Warm, inviting hero banner image showing children painting in an art classroom (hero-banner.dim_1920x600.png)",
+      "Friendly illustration of art supplies including paintbrushes, palettes, and canvases (art-supplies-illustration.dim_800x600.png)",
+      "Gallery placeholder image showing an empty easel waiting for artwork (gallery-placeholder.dim_400x300.png)",
+      "Student dashboard welcome illustration with colorful art elements (dashboard-welcome.dim_600x400.png)",
+      "Teacher panel header illustration showing instructor with students (teacher-panel-header.dim_800x300.png)"
+    ],
+    "edits": []
+  }
+}
